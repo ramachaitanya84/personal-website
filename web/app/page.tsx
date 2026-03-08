@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/reveal";
-import avatar from '../public/avatar.png';
 
 export default function HomePage() {
   return (
@@ -52,7 +51,7 @@ export default function HomePage() {
             style={{ borderColor: "var(--border)", boxShadow: "0 0 40px rgba(245,158,11,0.07)" }}
           >
             <Image
-              src={avatar}
+              src="/avatar.png"
               alt="Chaitanya Mukkamala"
               width={320}
               height={400}
