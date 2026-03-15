@@ -6,6 +6,8 @@ export type Project = {
   title: string;
   slug: string;
   tags: string[];
+  description?: string;
+  liveUrl?: string;
 };
 
 const projectsDir = path.join(process.cwd(), "content", "projects");
@@ -34,6 +36,11 @@ export function getProjects(): Project[] {
           ? [data.tags]
           : [];
 
-      return { title, slug, tags };
+      const description =
+        typeof data.description === "string" ? data.description : undefined;
+      const liveUrl =
+        typeof data.liveUrl === "string" ? data.liveUrl : undefined;
+
+      return { title, slug, tags, description, liveUrl };
     });
 }
